@@ -294,6 +294,23 @@ a { color: inherit; }
 }
 
 /* ==========================================================================
+   Two-Column Calculator Layout
+   ========================================================================== */
+
+.calc-two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calc-two-col__left,
+.calc-two-col__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
    Calculator Grid (Pattern A: paint, electricity)
    ========================================================================== */
 
@@ -729,6 +746,21 @@ input[type="number"] {
 
   .calc-grid > .calc-card {
     flex: 1;
+  }
+
+  .calc-two-col {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .calc-two-col__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .calc-two-col__right {
+    flex: 1;
+    min-width: 0;
   }
 }
 

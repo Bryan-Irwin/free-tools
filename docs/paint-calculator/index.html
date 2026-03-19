@@ -42,72 +42,76 @@
       <h1>Paint Calculator</h1>
       <p class="calc-subtitle">Calculate how much paint or stain you need for any surface</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Surface Dimensions</h2>
-          <div class="input-group">
-            <label for="length">Length (ft)</label>
-            <input type="number" id="length" min="0" step="0.1" placeholder="e.g. 12">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-card">
+            <h2>Surface Dimensions</h2>
+            <div class="input-group">
+              <label for="length">Length (ft)</label>
+              <input type="number" id="length" min="0" step="0.1" placeholder="e.g. 12">
+            </div>
+            <div class="input-group">
+              <label for="width">Width / Height (ft)</label>
+              <input type="number" id="width" min="0" step="0.1" placeholder="e.g. 10">
+            </div>
+            <div class="input-group">
+              <label for="coats">Number of Coats</label>
+              <input type="number" id="coats" min="1" max="5" step="1" value="2">
+            </div>
+            <div class="input-group">
+              <label for="surface">Surface Type</label>
+              <select id="surface">
+                <option value="400">Smooth Drywall (400 sq ft/gal)</option>
+                <option value="300">Textured Surface (300 sq ft/gal)</option>
+                <option value="250">Rough Wood (250 sq ft/gal)</option>
+                <option value="200">Concrete / Masonry (200 sq ft/gal)</option>
+              </select>
+            </div>
+            <button class="btn" onclick="calculate()">Calculate</button>
           </div>
-          <div class="input-group">
-            <label for="width">Width / Height (ft)</label>
-            <input type="number" id="width" min="0" step="0.1" placeholder="e.g. 10">
+
+          <div class="calc-card results-card" id="results">
+            <h2>Results</h2>
+            <div class="result-row">
+              <span class="result-label">Total Area</span>
+              <span class="result-value" id="totalArea">—</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Gallons Needed</span>
+              <span class="result-value" id="gallons">—</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Estimated Cost</span>
+              <span class="result-value" id="cost">—</span>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="coats">Number of Coats</label>
-            <input type="number" id="coats" min="1" max="5" step="1" value="2">
-          </div>
-          <div class="input-group">
-            <label for="surface">Surface Type</label>
-            <select id="surface">
-              <option value="400">Smooth Drywall (400 sq ft/gal)</option>
-              <option value="300">Textured Surface (300 sq ft/gal)</option>
-              <option value="250">Rough Wood (250 sq ft/gal)</option>
-              <option value="200">Concrete / Masonry (200 sq ft/gal)</option>
-            </select>
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
 
-        <div class="calc-card results-card" id="results">
-          <h2>Results</h2>
-          <div class="result-row">
-            <span class="result-label">Total Area</span>
-            <span class="result-value" id="totalArea">—</span>
+        <div class="calc-two-col__right">
+          <div class="calc-card tips-card">
+            <h2>Painting Tips</h2>
+            <ul>
+              <li>Always buy 10-15% more paint than calculated to account for waste, touch-ups, and uneven surfaces.</li>
+              <li>Two coats are recommended for most surfaces to ensure even coverage and durability.</li>
+              <li>Primer may be needed for new drywall, bare wood, or when making dramatic color changes. This is separate from your topcoat calculation.</li>
+              <li>Higher-quality paints often provide better coverage and may reduce the number of coats needed.</li>
+              <li>Temperature and humidity affect drying time. Paint in moderate conditions (50-85&deg;F) for best results.</li>
+              <li>Subtract the area of windows and doors for a more accurate wall paint estimate.</li>
+            </ul>
           </div>
-          <div class="result-row">
-            <span class="result-label">Gallons Needed</span>
-            <span class="result-value" id="gallons">—</span>
-          </div>
-          <div class="result-row">
-            <span class="result-label">Estimated Cost</span>
-            <span class="result-value" id="cost">—</span>
+
+          <div class="calc-card">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="deck/index.html">Deck Stain Calculator</a> &mdash; Calculate stain for your deck project</li>
+              <li><a href="fence/index.html">Fence Paint Calculator</a> &mdash; Estimate paint for fence staining or painting</li>
+              <li><a href="walls/index.html">Wall Paint Calculator</a> &mdash; Figure out how much paint for interior walls</li>
+              <li><a href="ceiling/index.html">Ceiling Paint Calculator</a> &mdash; Calculate ceiling paint needs</li>
+              <li><a href="siding/index.html">Exterior Siding Paint Calculator</a> &mdash; Estimate paint for exterior siding</li>
+              <li><a href="trim/index.html">Trim Paint Calculator</a> &mdash; Calculate paint for baseboards, door frames, and trim</li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      <div class="calc-card tips-card">
-        <h2>Painting Tips</h2>
-        <ul>
-          <li>Always buy 10-15% more paint than calculated to account for waste, touch-ups, and uneven surfaces.</li>
-          <li>Two coats are recommended for most surfaces to ensure even coverage and durability.</li>
-          <li>Primer may be needed for new drywall, bare wood, or when making dramatic color changes. This is separate from your topcoat calculation.</li>
-          <li>Higher-quality paints often provide better coverage and may reduce the number of coats needed.</li>
-          <li>Temperature and humidity affect drying time. Paint in moderate conditions (50-85&deg;F) for best results.</li>
-          <li>Subtract the area of windows and doors for a more accurate wall paint estimate.</li>
-        </ul>
-      </div>
-
-      <div class="calc-card">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="deck/index.html">Deck Stain Calculator</a> &mdash; Calculate stain for your deck project</li>
-          <li><a href="fence/index.html">Fence Paint Calculator</a> &mdash; Estimate paint for fence staining or painting</li>
-          <li><a href="walls/index.html">Wall Paint Calculator</a> &mdash; Figure out how much paint for interior walls</li>
-          <li><a href="ceiling/index.html">Ceiling Paint Calculator</a> &mdash; Calculate ceiling paint needs</li>
-          <li><a href="siding/index.html">Exterior Siding Paint Calculator</a> &mdash; Estimate paint for exterior siding</li>
-          <li><a href="trim/index.html">Trim Paint Calculator</a> &mdash; Calculate paint for baseboards, door frames, and trim</li>
-        </ul>
       </div>
     </div>
   </main>

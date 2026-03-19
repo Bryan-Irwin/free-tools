@@ -42,54 +42,59 @@
       <h1>How Much Does a Dishwasher Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of running your dishwasher</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Dishwasher Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="1800">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Dishwasher Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="1800">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="1">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="1">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>Dishwasher Tips</h2>
+            <ul>
+              <li><strong>Run only full loads:</strong> Running a half-empty dishwasher wastes water and energy. Wait until it is full before starting a cycle.</li>
+              <li><strong>Skip the heated dry cycle:</strong> Open the door after the wash cycle and let dishes air dry to save energy on the heating element.</li>
+              <li><strong>Use the eco or energy-saving mode:</strong> Most modern dishwashers have an eco cycle that uses less water and lower temperatures.</li>
+              <li><strong>Scrape, do not rinse:</strong> Modern dishwashers can handle food residue. Scraping plates instead of pre-rinsing saves both water and energy.</li>
+              <li><strong>Run during off-peak hours:</strong> If your utility offers time-of-use rates, run the dishwasher at night or early morning for lower electricity costs.</li>
+              <li><strong>Maintain your dishwasher:</strong> Clean the filter, spray arms, and door seal regularly to maintain optimal cleaning performance and efficiency.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../washer-dryer/index.html">Washer &amp; Dryer Electricity Cost Calculator</a></li>
+              <li><a href="../refrigerator/index.html">Refrigerator Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Dishwasher Tips</h2>
-        <ul>
-          <li><strong>Run only full loads:</strong> Running a half-empty dishwasher wastes water and energy. Wait until it is full before starting a cycle.</li>
-          <li><strong>Skip the heated dry cycle:</strong> Open the door after the wash cycle and let dishes air dry to save energy on the heating element.</li>
-          <li><strong>Use the eco or energy-saving mode:</strong> Most modern dishwashers have an eco cycle that uses less water and lower temperatures.</li>
-          <li><strong>Scrape, do not rinse:</strong> Modern dishwashers can handle food residue. Scraping plates instead of pre-rinsing saves both water and energy.</li>
-          <li><strong>Run during off-peak hours:</strong> If your utility offers time-of-use rates, run the dishwasher at night or early morning for lower electricity costs.</li>
-          <li><strong>Maintain your dishwasher:</strong> Clean the filter, spray arms, and door seal regularly to maintain optimal cleaning performance and efficiency.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../washer-dryer/index.html">Washer &amp; Dryer Electricity Cost Calculator</a></li>
-          <li><a href="../refrigerator/index.html">Refrigerator Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>

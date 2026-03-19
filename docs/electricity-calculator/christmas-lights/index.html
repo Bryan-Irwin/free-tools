@@ -42,53 +42,58 @@
       <h1>How Much Do Christmas Lights Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of your holiday light display</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Christmas Lights Details</h2>
-          <div class="input-group">
-            <label for="wattage">Total wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="200">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Christmas Lights Details</h2>
+              <div class="input-group">
+                <label for="wattage">Total wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="200">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="6">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="6">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>LED vs Incandescent Christmas Lights</h2>
+            <ul>
+              <li><strong>LED lights use up to 90% less energy:</strong> A string of 100 LED mini lights uses about 3.4 watts compared to 40 watts for incandescent mini lights.</li>
+              <li><strong>LED lights last longer:</strong> LED Christmas lights can last up to 25,000 hours, while incandescent bulbs typically last around 1,000-2,000 hours.</li>
+              <li><strong>LED lights run cooler:</strong> Because they generate less heat, LED lights are safer and reduce the risk of fire, especially on dry trees.</li>
+              <li><strong>Use a timer:</strong> Set lights to turn on at dusk and off at bedtime to avoid running them all night and wasting electricity.</li>
+              <li><strong>Solar-powered options:</strong> For outdoor displays, solar-powered lights eliminate electricity costs entirely.</li>
+              <li><strong>Calculate total wattage:</strong> Check the label on each string of lights and add up the wattages for all strings to get your total wattage.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../electric-blanket/index.html">Electric Blanket Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>LED vs Incandescent Christmas Lights</h2>
-        <ul>
-          <li><strong>LED lights use up to 90% less energy:</strong> A string of 100 LED mini lights uses about 3.4 watts compared to 40 watts for incandescent mini lights.</li>
-          <li><strong>LED lights last longer:</strong> LED Christmas lights can last up to 25,000 hours, while incandescent bulbs typically last around 1,000-2,000 hours.</li>
-          <li><strong>LED lights run cooler:</strong> Because they generate less heat, LED lights are safer and reduce the risk of fire, especially on dry trees.</li>
-          <li><strong>Use a timer:</strong> Set lights to turn on at dusk and off at bedtime to avoid running them all night and wasting electricity.</li>
-          <li><strong>Solar-powered options:</strong> For outdoor displays, solar-powered lights eliminate electricity costs entirely.</li>
-          <li><strong>Calculate total wattage:</strong> Check the label on each string of lights and add up the wattages for all strings to get your total wattage.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../electric-blanket/index.html">Electric Blanket Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>

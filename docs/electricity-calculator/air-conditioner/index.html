@@ -42,54 +42,59 @@
       <h1>How Much Does an AC Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of running a window or portable air conditioner</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Air Conditioner Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="1500">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Air Conditioner Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="1500">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>AC Efficiency Tips</h2>
+            <ul>
+              <li><strong>Choose the right size unit:</strong> An oversized AC cools quickly but cycles on and off frequently, wasting energy. An undersized unit runs constantly without adequately cooling.</li>
+              <li><strong>Clean or replace filters monthly:</strong> Dirty filters restrict airflow and force the unit to work harder, increasing energy consumption by up to 15%.</li>
+              <li><strong>Use a programmable thermostat:</strong> Set the temperature higher when you are away and lower it before you return to avoid cooling an empty space.</li>
+              <li><strong>Seal windows and doors:</strong> Prevent cool air from escaping by sealing gaps and cracks around windows, doors, and ductwork.</li>
+              <li><strong>Use fans to circulate air:</strong> Ceiling or box fans help distribute cool air more evenly, allowing you to set the thermostat a few degrees higher.</li>
+              <li><strong>Block direct sunlight:</strong> Close blinds or curtains during peak sun hours to reduce heat gain and lighten the load on your AC.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../space-heater/index.html">Space Heater Electricity Cost Calculator</a></li>
+              <li><a href="../dehumidifier/index.html">Dehumidifier Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>AC Efficiency Tips</h2>
-        <ul>
-          <li><strong>Choose the right size unit:</strong> An oversized AC cools quickly but cycles on and off frequently, wasting energy. An undersized unit runs constantly without adequately cooling.</li>
-          <li><strong>Clean or replace filters monthly:</strong> Dirty filters restrict airflow and force the unit to work harder, increasing energy consumption by up to 15%.</li>
-          <li><strong>Use a programmable thermostat:</strong> Set the temperature higher when you are away and lower it before you return to avoid cooling an empty space.</li>
-          <li><strong>Seal windows and doors:</strong> Prevent cool air from escaping by sealing gaps and cracks around windows, doors, and ductwork.</li>
-          <li><strong>Use fans to circulate air:</strong> Ceiling or box fans help distribute cool air more evenly, allowing you to set the thermostat a few degrees higher.</li>
-          <li><strong>Block direct sunlight:</strong> Close blinds or curtains during peak sun hours to reduce heat gain and lighten the load on your AC.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../space-heater/index.html">Space Heater Electricity Cost Calculator</a></li>
-          <li><a href="../dehumidifier/index.html">Dehumidifier Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>
