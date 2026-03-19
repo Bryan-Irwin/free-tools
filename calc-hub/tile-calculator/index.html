@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile Calculator - How Many Tiles Do I Need? | CalcHub</title>
+  <meta name="description" content="Free tile calculator. Enter your room dimensions and tile size to find out how many tiles you need, including waste. Works for floor, wall, and backsplash tile.">
+  <meta property="og:title" content="Tile Calculator - How Many Tiles Do I Need? | CalcHub">
+  <meta property="og:description" content="Calculate how many tiles you need for any project. Enter dimensions, tile size, and waste percentage.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tile Calculator",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Calculate how many tiles you need for floor, wall, or backsplash projects."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../paint-calculator/index.html">Paint</a>
+        <a href="../material-calculator/index.html">Materials</a>
+        <a href="../electricity-calculator/index.html">Electricity</a>
+        <a href="../tile-calculator/index.html" class="active">Tile</a>
+        <a href="../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>Tile Calculator</h1>
+      <p class="subtitle">Calculate how many tiles you need for any floor, wall, or backsplash project</p>
+
+      <div class="calc-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="areaLength">Area Length <span class="hint">(ft)</span></label>
+            <input type="number" id="areaLength" min="0" step="0.1" value="10">
+          </div>
+          <div class="form-group">
+            <label for="areaWidth">Area Width <span class="hint">(ft)</span></label>
+            <input type="number" id="areaWidth" min="0" step="0.1" value="12">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tileLength">Tile Length <span class="hint">(inches)</span></label>
+            <input type="number" id="tileLength" min="0" step="0.1" value="12">
+          </div>
+          <div class="form-group">
+            <label for="tileWidth">Tile Width <span class="hint">(inches)</span></label>
+            <input type="number" id="tileWidth" min="0" step="0.1" value="12">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="groutWidth">Grout Width <span class="hint">(inches)</span></label>
+            <input type="number" id="groutWidth" min="0" step="0.0625" value="0.125">
+          </div>
+          <div class="form-group">
+            <label for="waste">Waste <span class="hint">(%)</span></label>
+            <input type="number" id="waste" min="0" max="50" value="10">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pricePerTile">Price Per Tile <span class="hint">($ optional)</span></label>
+          <input type="number" id="pricePerTile" min="0" step="0.01" placeholder="e.g. 2.50">
+        </div>
+
+        <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="results" id="results">
+        <h2>Results</h2>
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="label">Total Area</div>
+            <div class="value"><span id="totalArea">-</span> <span class="unit">sq ft</span></div>
+          </div>
+          <div class="result-item">
+            <div class="label">Tiles Needed</div>
+            <div class="value"><span id="tilesNeeded">-</span> <span class="unit">tiles</span></div>
+          </div>
+          <div class="result-item">
+            <div class="label">With Waste</div>
+            <div class="value"><span id="tilesWithWaste">-</span> <span class="unit">tiles</span></div>
+          </div>
+          <div class="result-item">
+            <div class="label">Tile Area</div>
+            <div class="value"><span id="tileArea">-</span> <span class="unit">sq in</span></div>
+          </div>
+          <div class="result-item">
+            <div class="label">Boxes Needed</div>
+            <div class="value"><span id="boxesNeeded">-</span> <span class="unit">(~10/box)</span></div>
+          </div>
+          <div class="result-item" id="costItem" style="display:none">
+            <div class="label">Estimated Cost</div>
+            <div class="value"><span id="totalCost">-</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tips">
+        <h2>Tile Calculator Tips</h2>
+        <ul>
+          <li>Always add 10% waste for straight layouts, 15% for diagonal or herringbone patterns</li>
+          <li>Buy all tiles from the same lot to ensure consistent color</li>
+          <li>Standard grout width is 1/8" for rectified tiles, 3/16" for standard tiles</li>
+          <li>Common tile sizes: 12x12", 12x24", 6x6", 4x4", 3x6" (subway)</li>
+          <li>Order extra tiles and keep them for future repairs</li>
+        </ul>
+      </div>
+
+      <div class="related">
+        <h3>Related Calculators</h3>
+        <div class="related-links">
+          <a href="floor/index.html">Floor Tile</a>
+          <a href="wall/index.html">Wall Tile</a>
+          <a href="backsplash/index.html">Backsplash Tile</a>
+          <a href="hardwood/index.html">Hardwood Flooring</a>
+          <a href="laminate/index.html">Laminate Flooring</a>
+          <a href="vinyl/index.html">Vinyl Flooring</a>
+          <a href="../paint-calculator/index.html">Paint Calculator</a>
+          <a href="../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../material-calculator/index.html">Material Calculator</a>
+        <a href="../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var areaL = parseFloat(document.getElementById('areaLength').value) || 0;
+      var areaW = parseFloat(document.getElementById('areaWidth').value) || 0;
+      var tileL = parseFloat(document.getElementById('tileLength').value) || 0;
+      var tileW = parseFloat(document.getElementById('tileWidth').value) || 0;
+      var grout = parseFloat(document.getElementById('groutWidth').value) || 0;
+      var wastePct = parseFloat(document.getElementById('waste').value) || 0;
+      var price = parseFloat(document.getElementById('pricePerTile').value) || 0;
+
+      if (areaL <= 0 || areaW <= 0 || tileL <= 0 || tileW <= 0) return;
+
+      var totalAreaSqFt = areaL * areaW;
+      var totalAreaSqIn = totalAreaSqFt * 144;
+      var tileAreaSqIn = (tileL + grout) * (tileW + grout);
+      var tilesExact = totalAreaSqIn / tileAreaSqIn;
+      var tilesNeeded = Math.ceil(tilesExact);
+      var tilesWithWaste = Math.ceil(tilesNeeded * (1 + wastePct / 100));
+      var boxesNeeded = Math.ceil(tilesWithWaste / 10);
+
+      CalcHub.setResult('totalArea', CalcHub.formatNum(totalAreaSqFt, 1));
+      CalcHub.setResult('tilesNeeded', CalcHub.formatNum(tilesNeeded, 0));
+      CalcHub.setResult('tilesWithWaste', CalcHub.formatNum(tilesWithWaste, 0));
+      CalcHub.setResult('tileArea', CalcHub.formatNum(tileL * tileW, 1));
+      CalcHub.setResult('boxesNeeded', CalcHub.formatNum(boxesNeeded, 0));
+
+      if (price > 0) {
+        document.getElementById('costItem').style.display = '';
+        CalcHub.setResult('totalCost', CalcHub.formatMoney(tilesWithWaste * price));
+      } else {
+        document.getElementById('costItem').style.display = 'none';
+      }
+
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>

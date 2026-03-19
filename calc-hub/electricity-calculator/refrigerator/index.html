@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigerator Electricity Cost Calculator | CalcHub</title>
+  <meta name="description" content="Calculate how much it costs to run a refrigerator. Estimate daily, monthly, and yearly fridge electricity costs with compressor duty cycle adjustment.">
+  <meta property="og:title" content="Refrigerator Electricity Cost Calculator | CalcHub">
+  <meta property="og:description" content="Calculate how much it costs to run a refrigerator. Estimate daily, monthly, and yearly fridge electricity costs with compressor duty cycle adjustment.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Refrigerator Electricity Cost Calculator | CalcHub",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Calculate how much it costs to run a refrigerator. Estimate daily, monthly, and yearly fridge electricity costs with compressor duty cycle adjustment."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../../paint-calculator/index.html">Paint</a>
+        <a href="../../material-calculator/index.html">Materials</a>
+        <a href="../../electricity-calculator/index.html" class="active">Electricity</a>
+        <a href="../../tile-calculator/index.html">Tile</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>How Much Does a Refrigerator Cost to Run?</h1>
+      <p class="calc-subtitle">Calculate the electricity cost of running a refrigerator with compressor duty cycle</p>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h2>Refrigerator Details</h2>
+          <div class="input-group">
+            <label for="wattage">Wattage (watts)</label>
+            <input type="number" id="wattage" min="0" step="1" value="150">
+          </div>
+          <div class="input-group">
+            <label for="hours">Hours per day</label>
+            <input type="number" id="hours" min="0" max="24" step="0.5" value="24">
+          </div>
+          <div class="input-group">
+            <label for="duty-cycle">Compressor duty cycle (%)</label>
+            <input type="number" id="duty-cycle" min="0" max="100" step="1" value="40">
+            <small>The compressor does not run continuously. Typical duty cycle is 30-50%.</small>
+          </div>
+          <div class="input-group">
+            <label for="rate">Electricity rate ($/kWh)</label>
+            <input type="number" id="rate" min="0" step="0.01" value="0.16">
+          </div>
+          <button class="btn" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="calc-card results-card" id="results" style="display:none;">
+          <h2>Estimated Costs</h2>
+          <div class="result-row"><span>Effective wattage:</span><strong id="effective-wattage">—</strong></div>
+          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Refrigerator Efficiency Tips</h2>
+        <ul>
+          <li><strong>Set the right temperature:</strong> Keep your fridge at 37-40°F (3-4°C) and the freezer at 0°F (-18°C). Colder settings waste energy without improving food safety.</li>
+          <li><strong>Keep coils clean:</strong> Dust and pet hair on condenser coils force the compressor to work harder. Clean them every 6-12 months.</li>
+          <li><strong>Check door seals:</strong> Worn or loose gaskets let cold air escape. Test by closing the door on a piece of paper; if it slides out easily, replace the seal.</li>
+          <li><strong>Keep it full but not packed:</strong> A well-stocked fridge retains cold better than an empty one, but overpacking blocks air circulation.</li>
+          <li><strong>Let hot food cool first:</strong> Placing hot food directly in the fridge raises the internal temperature and forces the compressor to work harder.</li>
+          <li><strong>Locate away from heat sources:</strong> Keep your fridge away from the oven, dishwasher, and direct sunlight to reduce the cooling load.</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+          <li><a href="../dishwasher/index.html">Dishwasher Electricity Cost Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../../material-calculator/index.html">Material Calculator</a>
+        <a href="../../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared.js"></script>
+  <script src="../../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var wattage = parseFloat(document.getElementById('wattage').value);
+      var hours = parseFloat(document.getElementById('hours').value);
+      var dutyCycle = parseFloat(document.getElementById('duty-cycle').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+
+      if (isNaN(wattage) || isNaN(hours) || isNaN(rate) || isNaN(dutyCycle) || wattage <= 0) {
+        alert('Please enter valid values.');
+        return;
+      }
+
+      var effectiveWattage = wattage * (dutyCycle / 100);
+      var kwhDay = (effectiveWattage * hours) / 1000;
+      var kwhMonth = kwhDay * 30;
+      var kwhYear = kwhDay * 365;
+      var costDay = kwhDay * rate;
+      var costMonth = kwhMonth * rate;
+      var costYear = kwhYear * rate;
+
+      CalcHub.setResult('effective-wattage', CalcHub.formatNum(effectiveWattage, 1) + ' W');
+      CalcHub.setResult('kwh-day', CalcHub.formatNum(kwhDay, 2));
+      CalcHub.setResult('kwh-month', CalcHub.formatNum(kwhMonth, 2));
+      CalcHub.setResult('kwh-year', CalcHub.formatNum(kwhYear, 2));
+      CalcHub.setResult('cost-day', CalcHub.formatMoney(costDay));
+      CalcHub.setResult('cost-month', CalcHub.formatMoney(costMonth));
+      CalcHub.setResult('cost-year', CalcHub.formatMoney(costYear));
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>

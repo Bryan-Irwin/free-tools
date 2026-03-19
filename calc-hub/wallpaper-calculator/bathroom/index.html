@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bathroom Wallpaper Calculator - How Many Rolls? | CalcHub</title>
+  <meta name="description" content="Free bathroom wallpaper calculator. Enter your bathroom dimensions to calculate wallpaper rolls needed. Accounts for moisture-resistant wallpaper needs.">
+  <meta property="og:title" content="Bathroom Wallpaper Calculator - How Many Rolls? | CalcHub">
+  <meta property="og:description" content="Free bathroom wallpaper calculator. Enter your bathroom dimensions to calculate wallpaper rolls needed. Accounts for moisture-resistant wallpaper need">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Bathroom Wallpaper Calculator","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free bathroom wallpaper calculator. Enter your bathroom dimensions to calculate wallpaper rolls needed. Accounts for moisture-resistant wallpaper need"}
+  </script>
+</head>
+<body>
+  <header class="header"><div class="header-inner"><a href="../../index.html" class="logo">Calc<span>Hub</span></a><nav class="nav"><a href="../../paint-calculator/index.html">Paint</a><a href="../../material-calculator/index.html">Materials</a><a href="../../electricity-calculator/index.html">Electricity</a><a href="../../tile-calculator/index.html">Tile</a><a href="../../wallpaper-calculator/index.html" class="active">Wallpaper</a></nav></div></header>
+  <div class="ad-slot ad-slot--banner"><span>Advertisement</span></div>
+  <main class="container"><div class="calc-page">
+    <h1>Bathroom Wallpaper Calculator</h1>
+    <p class="subtitle">Calculate how many rolls of wallpaper you need for a bathroom</p>
+    <div class="calc-form">
+      <div class="form-row">
+        <div class="form-group"><label for="roomLength">Room Length <span class="hint">(ft)</span></label><input type="number" id="roomLength" min="0" step="0.1" value="8"></div>
+        <div class="form-group"><label for="roomWidth">Room Width <span class="hint">(ft)</span></label><input type="number" id="roomWidth" min="0" step="0.1" value="6"></div>
+      </div>
+      <div class="form-group"><label for="wallHeight">Wall Height <span class="hint">(ft)</span></label><input type="number" id="wallHeight" min="0" step="0.1" value="8"></div>
+      <div class="form-row">
+        <div class="form-group"><label for="numDoors">Number of Doors</label><input type="number" id="numDoors" min="0" value="1"></div>
+        <div class="form-group"><label for="numWindows">Number of Windows</label><input type="number" id="numWindows" min="0" value="1"></div>
+      </div>
+      <div class="form-group"><label for="rollSize">Roll Size</label><select id="rollSize"><option value="56">US Standard (~56 sq ft)</option><option value="57">Euro Standard (~57 sq ft)</option><option value="72">US Double Roll (~72 sq ft)</option></select></div>
+      <div class="form-group"><label for="pricePerRoll">Price Per Roll <span class="hint">($ optional)</span></label><input type="number" id="pricePerRoll" min="0" step="0.01" placeholder="e.g. 35.00"></div>
+      <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+    </div>
+    <div class="results" id="results"><h2>Results</h2><div class="result-grid">
+      <div class="result-item"><div class="label">Wall Area</div><div class="value"><span id="totalWallArea">-</span> <span class="unit">sq ft</span></div></div>
+      <div class="result-item"><div class="label">Minus Openings</div><div class="value"><span id="openingsArea">-</span> <span class="unit">sq ft</span></div></div>
+      <div class="result-item"><div class="label">Coverable Area</div><div class="value"><span id="coverArea">-</span> <span class="unit">sq ft</span></div></div>
+      <div class="result-item"><div class="label">Rolls Needed</div><div class="value"><span id="rollsNeeded">-</span> <span class="unit">rolls</span></div></div>
+      <div class="result-item"><div class="label">With 10% Extra</div><div class="value"><span id="rollsExtra">-</span> <span class="unit">rolls</span></div></div>
+      <div class="result-item" id="costItem" style="display:none"><div class="label">Estimated Cost</div><div class="value"><span id="totalCost">-</span></div></div>
+    </div></div>
+    <div class="tips"><h2>Bathroom Wallpaper Calculator Tips</h2><ul><li>Use vinyl or vinyl-coated wallpaper in bathrooms for moisture resistance</li><li>Avoid papering directly behind the shower or tub — use tile instead</li><li>Peel-and-stick wallpaper is great for bathroom accent walls</li><li>Ensure proper ventilation (exhaust fan) to prevent peeling</li><li>Average half bath is 4x6 ft; full bath is 8x6 ft</li></ul></div>
+    <div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="../index.html">General Wallpaper</a><a href="../bedroom/index.html">Bedroom</a><a href="../living-room/index.html">Living Room</a><a href="../accent-wall/index.html">Accent Wall</a></div></div>
+  </div></main>
+  <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
+  <footer class="footer"><div class="footer-inner"><div class="footer-links"><a href="../../paint-calculator/index.html">Paint Calculator</a><a href="../../material-calculator/index.html">Material Calculator</a><a href="../../electricity-calculator/index.html">Electricity Calculator</a><a href="../../tile-calculator/index.html">Tile Calculator</a><a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a></div><p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p></div></footer>
+  <script src="../../js/shared.js"></script><script src="../../js/analytics.js"></script>
+  <script>
+    function calculate(){var rL=parseFloat(document.getElementById('roomLength').value)||0;var rW=parseFloat(document.getElementById('roomWidth').value)||0;var rH=parseFloat(document.getElementById('wallHeight').value)||0;var doors=parseInt(document.getElementById('numDoors').value)||0;var windows=parseInt(document.getElementById('numWindows').value)||0;var rollSqFt=parseFloat(document.getElementById('rollSize').value)||56;var price=parseFloat(document.getElementById('pricePerRoll').value)||0;if(rL<=0||rH<=0)return;var perimeter=rW>0?2*(rL+rW):rL;var totalWallArea=perimeter*rH;var openings=doors*21+windows*12;var coverArea=Math.max(totalWallArea-openings,0);var rollsExact=coverArea/rollSqFt;var rollsNeeded=Math.ceil(rollsExact);var rollsExtra=Math.ceil(rollsExact*1.1);CalcHub.setResult('totalWallArea',CalcHub.formatNum(totalWallArea,0));CalcHub.setResult('openingsArea',CalcHub.formatNum(openings,0));CalcHub.setResult('coverArea',CalcHub.formatNum(coverArea,0));CalcHub.setResult('rollsNeeded',rollsNeeded);CalcHub.setResult('rollsExtra',rollsExtra);if(price>0){document.getElementById('costItem').style.display='';CalcHub.setResult('totalCost',CalcHub.formatMoney(rollsExtra*price))}else{document.getElementById('costItem').style.display='none'}CalcHub.showResults('results')}
+  </script>
+</body>
+</html>

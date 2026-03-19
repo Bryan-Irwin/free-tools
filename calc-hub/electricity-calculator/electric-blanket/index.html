@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Blanket Electricity Cost Calculator | CalcHub</title>
+  <meta name="description" content="Calculate how much it costs to run an electric blanket. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your rate.">
+  <meta property="og:title" content="Electric Blanket Electricity Cost Calculator | CalcHub">
+  <meta property="og:description" content="Calculate how much it costs to run an electric blanket. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your rate.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Electric Blanket Electricity Cost Calculator | CalcHub",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Calculate how much it costs to run an electric blanket. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your rate."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../../paint-calculator/index.html">Paint</a>
+        <a href="../../material-calculator/index.html">Materials</a>
+        <a href="../../electricity-calculator/index.html" class="active">Electricity</a>
+        <a href="../../tile-calculator/index.html">Tile</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>How Much Does an Electric Blanket Cost to Run?</h1>
+      <p class="calc-subtitle">Calculate the electricity cost of using an electric blanket</p>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h2>Electric Blanket Details</h2>
+          <div class="input-group">
+            <label for="wattage">Wattage (watts)</label>
+            <input type="number" id="wattage" min="0" step="1" value="200">
+          </div>
+          <div class="input-group">
+            <label for="hours">Hours per day</label>
+            <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
+          </div>
+          <div class="input-group">
+            <label for="rate">Electricity rate ($/kWh)</label>
+            <input type="number" id="rate" min="0" step="0.01" value="0.16">
+          </div>
+          <button class="btn" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="calc-card results-card" id="results" style="display:none;">
+          <h2>Estimated Costs</h2>
+          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Electric Blanket Tips</h2>
+        <ul>
+          <li><strong>Use it to pre-heat your bed:</strong> Turn on the electric blanket 15-30 minutes before bedtime, then turn it off or to a low setting when you get in.</li>
+          <li><strong>Lower your thermostat at night:</strong> An electric blanket uses far less energy than heating your entire home. Drop the thermostat a few degrees and use the blanket instead.</li>
+          <li><strong>Choose one with an auto-shutoff:</strong> Blankets with automatic shutoff timers prevent running all night and reduce energy waste and safety risks.</li>
+          <li><strong>Use a lower heat setting:</strong> Most electric blankets use significantly less wattage on low or medium settings compared to the maximum rating.</li>
+          <li><strong>Layer with regular blankets:</strong> Place the electric blanket under a comforter or duvet to trap heat, allowing you to use a lower setting.</li>
+          <li><strong>Inspect regularly:</strong> Check for worn wires, scorch marks, or damage. Replace old blankets to ensure safety and efficiency.</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+          <li><a href="../space-heater/index.html">Space Heater Electricity Cost Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../../material-calculator/index.html">Material Calculator</a>
+        <a href="../../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared.js"></script>
+  <script src="../../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var wattage = parseFloat(document.getElementById('wattage').value);
+      var hours = parseFloat(document.getElementById('hours').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+
+      if (isNaN(wattage) || isNaN(hours) || isNaN(rate) || wattage <= 0) {
+        alert('Please enter a valid wattage.');
+        return;
+      }
+
+      var kwhDay = (wattage * hours) / 1000;
+      var kwhMonth = kwhDay * 30;
+      var kwhYear = kwhDay * 365;
+      var costDay = kwhDay * rate;
+      var costMonth = kwhMonth * rate;
+      var costYear = kwhYear * rate;
+
+      CalcHub.setResult('kwh-day', CalcHub.formatNum(kwhDay, 2));
+      CalcHub.setResult('kwh-month', CalcHub.formatNum(kwhMonth, 2));
+      CalcHub.setResult('kwh-year', CalcHub.formatNum(kwhYear, 2));
+      CalcHub.setResult('cost-day', CalcHub.formatMoney(costDay));
+      CalcHub.setResult('cost-month', CalcHub.formatMoney(costMonth));
+      CalcHub.setResult('cost-year', CalcHub.formatMoney(costYear));
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>

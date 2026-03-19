@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Update the domain below to your actual domain -->
+  <url><loc>https://calchub.example.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+
+  <!-- Paint Calculator -->
+  <url><loc>https://calchub.example.com/paint-calculator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/deck/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/fence/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/walls/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/ceiling/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/siding/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/paint-calculator/trim/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Material Calculator -->
+  <url><loc>https://calchub.example.com/material-calculator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/mulch/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/gravel/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/sand/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/topsoil/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/pea-gravel/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/river-rock/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/material-calculator/crushed-stone/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Electricity Calculator -->
+  <url><loc>https://calchub.example.com/electricity-calculator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/space-heater/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/air-conditioner/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/pool-pump/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/dehumidifier/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/hot-tub/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/washer-dryer/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/refrigerator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/dishwasher/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/christmas-lights/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/electricity-calculator/electric-blanket/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Tile Calculator -->
+  <url><loc>https://calchub.example.com/tile-calculator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/floor/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/wall/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/backsplash/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/hardwood/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/laminate/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/tile-calculator/vinyl/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Wallpaper Calculator -->
+  <url><loc>https://calchub.example.com/wallpaper-calculator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calchub.example.com/wallpaper-calculator/bedroom/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/wallpaper-calculator/bathroom/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/wallpaper-calculator/living-room/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calchub.example.com/wallpaper-calculator/accent-wall/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

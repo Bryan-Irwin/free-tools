@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck Stain Calculator - How Much Stain for a Deck? | CalcHub</title>
+  <meta name="description" content="Free deck stain calculator. Enter your deck dimensions and number of coats to find out exactly how much stain you need for your deck project.">
+  <meta property="og:title" content="Deck Stain Calculator - How Much Stain for a Deck? | CalcHub">
+  <meta property="og:description" content="Free deck stain calculator. Enter your deck dimensions and number of coats to find out exactly how much stain you need for your deck project.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Deck Stain Calculator - How Much Stain for a Deck? | CalcHub",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Free deck stain calculator. Enter your deck dimensions and number of coats to find out exactly how much stain you need for your deck project."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../../paint-calculator/index.html" class="active">Paint</a>
+        <a href="../../material-calculator/index.html">Materials</a>
+        <a href="../../electricity-calculator/index.html">Electricity</a>
+        <a href="../../tile-calculator/index.html">Tile</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><!-- Adsterra Banner Ad --><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>Deck Stain Calculator</h1>
+      <p class="calc-subtitle">Calculate how much stain you need for your deck</p>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h2>Deck Dimensions</h2>
+          <div class="input-group">
+            <label for="length">Deck Length (ft)</label>
+            <input type="number" id="length" min="0" step="0.1" value="12">
+          </div>
+          <div class="input-group">
+            <label for="width">Deck Width (ft)</label>
+            <input type="number" id="width" min="0" step="0.1" value="16">
+          </div>
+          <div class="input-group">
+            <label for="coats">Number of Coats</label>
+            <input type="number" id="coats" min="1" max="5" step="1" value="2">
+          </div>
+          <div class="input-group">
+            <label for="surface">Surface Type</label>
+            <select id="surface">
+              <option value="400">Smooth Drywall (400 sq ft/gal)</option>
+              <option value="300">Textured Surface (300 sq ft/gal)</option>
+              <option value="250" selected>Rough Wood (250 sq ft/gal)</option>
+              <option value="200">Concrete / Masonry (200 sq ft/gal)</option>
+            </select>
+          </div>
+          <button class="btn" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="calc-card results-card" id="results">
+          <h2>Results</h2>
+          <div class="result-row">
+            <span class="result-label">Total Area</span>
+            <span class="result-value" id="totalArea">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Gallons Needed</span>
+            <span class="result-value" id="gallons">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Estimated Cost</span>
+            <span class="result-value" id="cost">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-card tips-card">
+        <h2>Deck Staining Tips</h2>
+        <ul>
+          <li>Clean and power-wash your deck thoroughly before staining. Allow it to dry for at least 48 hours.</li>
+          <li>Sand rough or splintered boards before applying stain for a smoother finish.</li>
+          <li>Apply stain in the direction of the wood grain using a brush, roller, or sprayer.</li>
+          <li>Avoid staining in direct sunlight or when rain is expected within 24 hours.</li>
+          <li>Rough, weathered wood absorbs more stain than smooth or new wood. Plan for extra material.</li>
+          <li>Semi-transparent stains typically require reapplication every 2-3 years; solid stains last 4-5 years.</li>
+        </ul>
+      </div>
+
+      <div class="calc-card">
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="../index.html">Paint Calculator</a> &mdash; General paint calculator for any surface</li>
+          <li><a href="../fence/index.html">Fence Paint Calculator</a> &mdash; Estimate paint for fence projects</li>
+          <li><a href="../walls/index.html">Wall Paint Calculator</a> &mdash; Calculate paint for interior walls</li>
+          <li><a href="../ceiling/index.html">Ceiling Paint Calculator</a> &mdash; Calculate ceiling paint needs</li>
+          <li><a href="../siding/index.html">Exterior Siding Paint Calculator</a> &mdash; Estimate paint for siding</li>
+          <li><a href="../trim/index.html">Trim Paint Calculator</a> &mdash; Calculate paint for trim and baseboards</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><!-- Adsterra Responsive Ad --><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../../material-calculator/index.html">Material Calculator</a>
+        <a href="../../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared.js"></script>
+  <script src="../../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var length = parseFloat(document.getElementById('length').value);
+      var width = parseFloat(document.getElementById('width').value);
+      var coats = parseInt(document.getElementById('coats').value) || 2;
+      var coverage = parseInt(document.getElementById('surface').value);
+
+      if (!length || !width || length <= 0 || width <= 0) {
+        alert('Please enter valid dimensions.');
+        return;
+      }
+
+      var area = length * width;
+      var totalArea = area * coats;
+      var gallons = totalArea / coverage;
+      gallons = Math.ceil(gallons * 2) / 2;
+
+      var costLow = gallons * 30;
+      var costHigh = gallons * 50;
+
+      CalcHub.setResult('totalArea', CalcHub.formatNum(area, 1) + ' sq ft');
+      CalcHub.setResult('gallons', CalcHub.formatNum(gallons, 1) + ' gallons');
+      CalcHub.setResult('cost', CalcHub.formatMoney(costLow) + ' – ' + CalcHub.formatMoney(costHigh));
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dehumidifier Electricity Cost Calculator | CalcHub</title>
+  <meta name="description" content="Calculate how much it costs to run a dehumidifier. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your energy rate.">
+  <meta property="og:title" content="Dehumidifier Electricity Cost Calculator | CalcHub">
+  <meta property="og:description" content="Calculate how much it costs to run a dehumidifier. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your energy rate.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dehumidifier Electricity Cost Calculator | CalcHub",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Calculate how much it costs to run a dehumidifier. Estimate daily, monthly, and yearly electricity costs based on wattage, usage hours, and your energy rate."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../../paint-calculator/index.html">Paint</a>
+        <a href="../../material-calculator/index.html">Materials</a>
+        <a href="../../electricity-calculator/index.html" class="active">Electricity</a>
+        <a href="../../tile-calculator/index.html">Tile</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>How Much Does a Dehumidifier Cost to Run?</h1>
+      <p class="calc-subtitle">Calculate the electricity cost of running a dehumidifier</p>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h2>Dehumidifier Details</h2>
+          <div class="input-group">
+            <label for="wattage">Wattage (watts)</label>
+            <input type="number" id="wattage" min="0" step="1" value="500">
+          </div>
+          <div class="input-group">
+            <label for="hours">Hours per day</label>
+            <input type="number" id="hours" min="0" max="24" step="0.5" value="12">
+          </div>
+          <div class="input-group">
+            <label for="rate">Electricity rate ($/kWh)</label>
+            <input type="number" id="rate" min="0" step="0.01" value="0.16">
+          </div>
+          <button class="btn" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="calc-card results-card" id="results" style="display:none;">
+          <h2>Estimated Costs</h2>
+          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Dehumidifier Tips</h2>
+        <ul>
+          <li><strong>Right-size your dehumidifier:</strong> Choose a unit rated for your room size. An undersized unit runs constantly, while an oversized one wastes energy.</li>
+          <li><strong>Set an appropriate humidity level:</strong> Aim for 30-50% relative humidity. Setting the target too low forces the unit to run longer than necessary.</li>
+          <li><strong>Choose an ENERGY STAR model:</strong> ENERGY STAR certified dehumidifiers use up to 15% less energy than standard models.</li>
+          <li><strong>Keep doors and windows closed:</strong> Prevent humid outside air from entering the space while the dehumidifier is running.</li>
+          <li><strong>Clean the filter regularly:</strong> A dirty filter reduces airflow and efficiency. Clean or replace it every few weeks.</li>
+          <li><strong>Place it in the right location:</strong> Position the dehumidifier away from walls and furniture to allow proper airflow around the unit.</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+          <li><a href="../air-conditioner/index.html">Air Conditioner Electricity Cost Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../../material-calculator/index.html">Material Calculator</a>
+        <a href="../../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared.js"></script>
+  <script src="../../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var wattage = parseFloat(document.getElementById('wattage').value);
+      var hours = parseFloat(document.getElementById('hours').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+
+      if (isNaN(wattage) || isNaN(hours) || isNaN(rate) || wattage <= 0) {
+        alert('Please enter a valid wattage.');
+        return;
+      }
+
+      var kwhDay = (wattage * hours) / 1000;
+      var kwhMonth = kwhDay * 30;
+      var kwhYear = kwhDay * 365;
+      var costDay = kwhDay * rate;
+      var costMonth = kwhMonth * rate;
+      var costYear = kwhYear * rate;
+
+      CalcHub.setResult('kwh-day', CalcHub.formatNum(kwhDay, 2));
+      CalcHub.setResult('kwh-month', CalcHub.formatNum(kwhMonth, 2));
+      CalcHub.setResult('kwh-year', CalcHub.formatNum(kwhYear, 2));
+      CalcHub.setResult('cost-day', CalcHub.formatMoney(costDay));
+      CalcHub.setResult('cost-month', CalcHub.formatMoney(costMonth));
+      CalcHub.setResult('cost-year', CalcHub.formatMoney(costYear));
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>

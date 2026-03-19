@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceiling Paint Calculator - How Much Paint for a Ceiling? | CalcHub</title>
+  <meta name="description" content="Free ceiling paint calculator. Enter your room dimensions to estimate how many gallons of ceiling paint you need. Accounts for surface type and coats.">
+  <meta property="og:title" content="Ceiling Paint Calculator - How Much Paint for a Ceiling? | CalcHub">
+  <meta property="og:description" content="Free ceiling paint calculator. Enter your room dimensions to estimate how many gallons of ceiling paint you need. Accounts for surface type and coats.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ceiling Paint Calculator - How Much Paint for a Ceiling? | CalcHub",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Free ceiling paint calculator. Enter your room dimensions to estimate how many gallons of ceiling paint you need. Accounts for surface type and coats."
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo">Calc<span>Hub</span></a>
+      <nav class="nav">
+        <a href="../../paint-calculator/index.html" class="active">Paint</a>
+        <a href="../../material-calculator/index.html">Materials</a>
+        <a href="../../electricity-calculator/index.html">Electricity</a>
+        <a href="../../tile-calculator/index.html">Tile</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot--banner"><!-- Adsterra Banner Ad --><span>Advertisement</span></div>
+
+  <main class="container">
+    <div class="calc-page">
+      <h1>Ceiling Paint Calculator</h1>
+      <p class="calc-subtitle">Calculate how much paint you need for your ceiling</p>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h2>Room Dimensions</h2>
+          <div class="input-group">
+            <label for="length">Room Length (ft)</label>
+            <input type="number" id="length" min="0" step="0.1" value="12">
+          </div>
+          <div class="input-group">
+            <label for="width">Room Width (ft)</label>
+            <input type="number" id="width" min="0" step="0.1" value="14">
+          </div>
+          <div class="input-group">
+            <label for="coats">Number of Coats</label>
+            <input type="number" id="coats" min="1" max="5" step="1" value="2">
+          </div>
+          <div class="input-group">
+            <label for="surface">Surface Type</label>
+            <select id="surface">
+              <option value="400" selected>Smooth Drywall (400 sq ft/gal)</option>
+              <option value="300">Textured Surface (300 sq ft/gal)</option>
+              <option value="250">Rough Wood (250 sq ft/gal)</option>
+              <option value="200">Concrete / Masonry (200 sq ft/gal)</option>
+            </select>
+          </div>
+          <button class="btn" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="calc-card results-card" id="results">
+          <h2>Results</h2>
+          <div class="result-row">
+            <span class="result-label">Total Area</span>
+            <span class="result-value" id="totalArea">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Gallons Needed</span>
+            <span class="result-value" id="gallons">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Estimated Cost</span>
+            <span class="result-value" id="cost">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-card tips-card">
+        <h2>Ceiling Painting Tips</h2>
+        <ul>
+          <li>Use ceiling-specific paint, which is thicker and formulated to minimize drips and spatter.</li>
+          <li>Flat or matte finishes are ideal for ceilings because they hide imperfections and reduce glare.</li>
+          <li>Paint the ceiling before the walls to avoid drips on freshly painted surfaces below.</li>
+          <li>Use an extension pole with your roller to reach the ceiling comfortably without a ladder.</li>
+          <li>For textured ceilings (like popcorn), use a thick-nap roller (3/4 inch or more) and expect higher paint usage.</li>
+          <li>Work in sections, maintaining a wet edge to avoid lap marks and visible seams.</li>
+        </ul>
+      </div>
+
+      <div class="calc-card">
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="../index.html">Paint Calculator</a> &mdash; General paint calculator for any surface</li>
+          <li><a href="../deck/index.html">Deck Stain Calculator</a> &mdash; Calculate stain for your deck</li>
+          <li><a href="../fence/index.html">Fence Paint Calculator</a> &mdash; Estimate paint for fence projects</li>
+          <li><a href="../walls/index.html">Wall Paint Calculator</a> &mdash; Calculate paint for interior walls</li>
+          <li><a href="../siding/index.html">Exterior Siding Paint Calculator</a> &mdash; Estimate paint for siding</li>
+          <li><a href="../trim/index.html">Trim Paint Calculator</a> &mdash; Calculate paint for trim and baseboards</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-slot--responsive"><!-- Adsterra Responsive Ad --><span>Advertisement</span></div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../../paint-calculator/index.html">Paint Calculator</a>
+        <a href="../../material-calculator/index.html">Material Calculator</a>
+        <a href="../../electricity-calculator/index.html">Electricity Calculator</a>
+        <a href="../../tile-calculator/index.html">Tile Calculator</a>
+        <a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared.js"></script>
+  <script src="../../js/analytics.js"></script>
+  <script>
+    function calculate() {
+      var length = parseFloat(document.getElementById('length').value);
+      var width = parseFloat(document.getElementById('width').value);
+      var coats = parseInt(document.getElementById('coats').value) || 2;
+      var coverage = parseInt(document.getElementById('surface').value);
+
+      if (!length || !width || length <= 0 || width <= 0) {
+        alert('Please enter valid dimensions.');
+        return;
+      }
+
+      var area = length * width;
+      var totalArea = area * coats;
+      var gallons = totalArea / coverage;
+      gallons = Math.ceil(gallons * 2) / 2;
+
+      var costLow = gallons * 30;
+      var costHigh = gallons * 50;
+
+      CalcHub.setResult('totalArea', CalcHub.formatNum(area, 1) + ' sq ft');
+      CalcHub.setResult('gallons', CalcHub.formatNum(gallons, 1) + ' gallons');
+      CalcHub.setResult('cost', CalcHub.formatMoney(costLow) + ' – ' + CalcHub.formatMoney(costHigh));
+      CalcHub.showResults('results');
+    }
+  </script>
+</body>
+</html>
