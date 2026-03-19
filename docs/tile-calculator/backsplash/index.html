@@ -19,32 +19,38 @@
   <main class="container"><div class="calc-page">
     <h1>Backsplash Tile Calculator</h1>
     <p class="subtitle">Calculate how many tiles you need for a kitchen or bathroom backsplash</p>
-    <div class="calc-form">
-      <div class="form-row">
-        <div class="form-group"><label for="areaLength">Backsplash Width <span class="hint">(ft)</span></label><input type="number" id="areaLength" min="0" step="0.1" value="10"></div>
-        <div class="form-group"><label for="areaWidth">Backsplash Height <span class="hint">(ft)</span></label><input type="number" id="areaWidth" min="0" step="0.1" value="1.5"></div>
+    <div class="calc-two-col">
+      <div class="calc-two-col__left">
+        <div class="calc-form">
+          <div class="form-row">
+            <div class="form-group"><label for="areaLength">Backsplash Width <span class="hint">(ft)</span></label><input type="number" id="areaLength" min="0" step="0.1" value="10"></div>
+            <div class="form-group"><label for="areaWidth">Backsplash Height <span class="hint">(ft)</span></label><input type="number" id="areaWidth" min="0" step="0.1" value="1.5"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="tileLength">Tile Length <span class="hint">(inches)</span></label><input type="number" id="tileLength" min="0" step="0.1" value="3"></div>
+            <div class="form-group"><label for="tileWidth">Tile Width <span class="hint">(inches)</span></label><input type="number" id="tileWidth" min="0" step="0.1" value="6"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="groutWidth">Grout Width <span class="hint">(inches)</span></label><input type="number" id="groutWidth" min="0" step="0.0625" value="0.125"></div>
+            <div class="form-group"><label for="waste">Waste <span class="hint">(%)</span></label><input type="number" id="waste" min="0" max="50" value="10"></div>
+          </div>
+          <div class="form-group"><label for="pricePerTile">Price Per Tile <span class="hint">($ optional)</span></label><input type="number" id="pricePerTile" min="0" step="0.01" placeholder="e.g. 2.50"></div>
+          <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+        </div>
+        <div class="results" id="results"><h2>Results</h2><div class="result-grid">
+          <div class="result-item"><div class="label">Total Area</div><div class="value"><span id="totalArea">-</span> <span class="unit">sq ft</span></div></div>
+          <div class="result-item"><div class="label">Tiles Needed</div><div class="value"><span id="tilesNeeded">-</span> <span class="unit">tiles</span></div></div>
+          <div class="result-item"><div class="label">With Waste</div><div class="value"><span id="tilesWithWaste">-</span> <span class="unit">tiles</span></div></div>
+          <div class="result-item"><div class="label">Tile Area</div><div class="value"><span id="tileArea">-</span> <span class="unit">sq in</span></div></div>
+          <div class="result-item"><div class="label">Boxes Needed</div><div class="value"><span id="boxesNeeded">-</span> <span class="unit">(~10/box)</span></div></div>
+          <div class="result-item" id="costItem" style="display:none"><div class="label">Estimated Cost</div><div class="value"><span id="totalCost">-</span></div></div>
+        </div></div>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label for="tileLength">Tile Length <span class="hint">(inches)</span></label><input type="number" id="tileLength" min="0" step="0.1" value="3"></div>
-        <div class="form-group"><label for="tileWidth">Tile Width <span class="hint">(inches)</span></label><input type="number" id="tileWidth" min="0" step="0.1" value="6"></div>
+      <div class="calc-two-col__right">
+        <div class="tips"><h2>Backsplash Tile Calculator Tips</h2><ul><li>Standard backsplash height is 18" (1.5 ft) between counter and upper cabinets</li><li>Subway tile (3x6") is the most popular backsplash choice</li><li>Add 15% waste for herringbone or chevron patterns</li><li>Consider using a tile edge trim instead of bullnose for a modern look</li><li>Measure around outlets and switches — you'll need extra tiles for these cuts</li></ul></div>
+        <div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="../index.html">General Tile</a><a href="../wall/index.html">Wall</a><a href="../hardwood/index.html">Hardwood</a><a href="../laminate/index.html">Laminate</a><a href="../vinyl/index.html">Vinyl</a></div></div>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label for="groutWidth">Grout Width <span class="hint">(inches)</span></label><input type="number" id="groutWidth" min="0" step="0.0625" value="0.125"></div>
-        <div class="form-group"><label for="waste">Waste <span class="hint">(%)</span></label><input type="number" id="waste" min="0" max="50" value="10"></div>
-      </div>
-      <div class="form-group"><label for="pricePerTile">Price Per Tile <span class="hint">($ optional)</span></label><input type="number" id="pricePerTile" min="0" step="0.01" placeholder="e.g. 2.50"></div>
-      <button class="btn btn-primary" onclick="calculate()">Calculate</button>
     </div>
-    <div class="results" id="results"><h2>Results</h2><div class="result-grid">
-      <div class="result-item"><div class="label">Total Area</div><div class="value"><span id="totalArea">-</span> <span class="unit">sq ft</span></div></div>
-      <div class="result-item"><div class="label">Tiles Needed</div><div class="value"><span id="tilesNeeded">-</span> <span class="unit">tiles</span></div></div>
-      <div class="result-item"><div class="label">With Waste</div><div class="value"><span id="tilesWithWaste">-</span> <span class="unit">tiles</span></div></div>
-      <div class="result-item"><div class="label">Tile Area</div><div class="value"><span id="tileArea">-</span> <span class="unit">sq in</span></div></div>
-      <div class="result-item"><div class="label">Boxes Needed</div><div class="value"><span id="boxesNeeded">-</span> <span class="unit">(~10/box)</span></div></div>
-      <div class="result-item" id="costItem" style="display:none"><div class="label">Estimated Cost</div><div class="value"><span id="totalCost">-</span></div></div>
-    </div></div>
-    <div class="tips"><h2>Backsplash Tile Calculator Tips</h2><ul><li>Standard backsplash height is 18" (1.5 ft) between counter and upper cabinets</li><li>Subway tile (3x6") is the most popular backsplash choice</li><li>Add 15% waste for herringbone or chevron patterns</li><li>Consider using a tile edge trim instead of bullnose for a modern look</li><li>Measure around outlets and switches — you'll need extra tiles for these cuts</li></ul></div>
-    <div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="../index.html">General Tile</a><a href="../wall/index.html">Wall</a><a href="../hardwood/index.html">Hardwood</a><a href="../laminate/index.html">Laminate</a><a href="../vinyl/index.html">Vinyl</a></div></div>
   </div></main>
   <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
   <footer class="footer"><div class="footer-inner"><div class="footer-links"><a href="../../paint-calculator/index.html">Paint Calculator</a><a href="../../material-calculator/index.html">Material Calculator</a><a href="../../electricity-calculator/index.html">Electricity Calculator</a><a href="../../tile-calculator/index.html">Tile Calculator</a><a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a></div><p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p></div></footer>

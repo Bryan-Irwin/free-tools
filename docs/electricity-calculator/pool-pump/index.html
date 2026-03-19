@@ -42,53 +42,58 @@
       <h1>How Much Does a Pool Pump Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of running your pool pump</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Pool Pump Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="1500">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Pool Pump Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="1500">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>Pool Pump Efficiency Tips</h2>
+            <ul>
+              <li><strong>Upgrade to a variable-speed pump:</strong> Variable-speed pumps can reduce energy consumption by up to 80% compared to single-speed models.</li>
+              <li><strong>Run the pump during off-peak hours:</strong> Electricity rates are often lower at night. Schedule your pump to run during off-peak times to save money.</li>
+              <li><strong>Reduce run time:</strong> Most pools only need 6 to 8 hours of filtration per day. Experiment with shorter run times while maintaining water clarity.</li>
+              <li><strong>Keep the filter clean:</strong> A clogged filter forces the pump to work harder. Clean or backwash your filter regularly.</li>
+              <li><strong>Use a pool cover:</strong> Covers reduce debris entering the pool, which means less filtration time is needed.</li>
+              <li><strong>Check for leaks:</strong> Leaking plumbing forces the pump to work harder and can significantly increase energy costs.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../hot-tub/index.html">Hot Tub Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Pool Pump Efficiency Tips</h2>
-        <ul>
-          <li><strong>Upgrade to a variable-speed pump:</strong> Variable-speed pumps can reduce energy consumption by up to 80% compared to single-speed models.</li>
-          <li><strong>Run the pump during off-peak hours:</strong> Electricity rates are often lower at night. Schedule your pump to run during off-peak times to save money.</li>
-          <li><strong>Reduce run time:</strong> Most pools only need 6 to 8 hours of filtration per day. Experiment with shorter run times while maintaining water clarity.</li>
-          <li><strong>Keep the filter clean:</strong> A clogged filter forces the pump to work harder. Clean or backwash your filter regularly.</li>
-          <li><strong>Use a pool cover:</strong> Covers reduce debris entering the pool, which means less filtration time is needed.</li>
-          <li><strong>Check for leaks:</strong> Leaking plumbing forces the pump to work harder and can significantly increase energy costs.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../hot-tub/index.html">Hot Tub Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>

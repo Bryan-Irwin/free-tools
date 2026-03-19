@@ -42,53 +42,58 @@
       <h1>How Much Does an Electric Blanket Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of using an electric blanket</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Electric Blanket Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="200">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Electric Blanket Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="200">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="8">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>Electric Blanket Tips</h2>
+            <ul>
+              <li><strong>Use it to pre-heat your bed:</strong> Turn on the electric blanket 15-30 minutes before bedtime, then turn it off or to a low setting when you get in.</li>
+              <li><strong>Lower your thermostat at night:</strong> An electric blanket uses far less energy than heating your entire home. Drop the thermostat a few degrees and use the blanket instead.</li>
+              <li><strong>Choose one with an auto-shutoff:</strong> Blankets with automatic shutoff timers prevent running all night and reduce energy waste and safety risks.</li>
+              <li><strong>Use a lower heat setting:</strong> Most electric blankets use significantly less wattage on low or medium settings compared to the maximum rating.</li>
+              <li><strong>Layer with regular blankets:</strong> Place the electric blanket under a comforter or duvet to trap heat, allowing you to use a lower setting.</li>
+              <li><strong>Inspect regularly:</strong> Check for worn wires, scorch marks, or damage. Replace old blankets to ensure safety and efficiency.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../space-heater/index.html">Space Heater Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Electric Blanket Tips</h2>
-        <ul>
-          <li><strong>Use it to pre-heat your bed:</strong> Turn on the electric blanket 15-30 minutes before bedtime, then turn it off or to a low setting when you get in.</li>
-          <li><strong>Lower your thermostat at night:</strong> An electric blanket uses far less energy than heating your entire home. Drop the thermostat a few degrees and use the blanket instead.</li>
-          <li><strong>Choose one with an auto-shutoff:</strong> Blankets with automatic shutoff timers prevent running all night and reduce energy waste and safety risks.</li>
-          <li><strong>Use a lower heat setting:</strong> Most electric blankets use significantly less wattage on low or medium settings compared to the maximum rating.</li>
-          <li><strong>Layer with regular blankets:</strong> Place the electric blanket under a comforter or duvet to trap heat, allowing you to use a lower setting.</li>
-          <li><strong>Inspect regularly:</strong> Check for worn wires, scorch marks, or damage. Replace old blankets to ensure safety and efficiency.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../space-heater/index.html">Space Heater Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>

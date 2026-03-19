@@ -19,29 +19,35 @@
   <main class="container"><div class="calc-page">
     <h1>Hardwood Flooring Calculator</h1>
     <p class="subtitle">Calculate how many square feet of hardwood flooring you need</p>
-    <div class="calc-form">
-      <div class="form-row">
-        <div class="form-group"><label for="areaLength">Room Length <span class="hint">(ft)</span></label><input type="number" id="areaLength" min="0" step="0.1" value="14"></div>
-        <div class="form-group"><label for="areaWidth">Room Width <span class="hint">(ft)</span></label><input type="number" id="areaWidth" min="0" step="0.1" value="12"></div>
+    <div class="calc-two-col">
+      <div class="calc-two-col__left">
+        <div class="calc-form">
+          <div class="form-row">
+            <div class="form-group"><label for="areaLength">Room Length <span class="hint">(ft)</span></label><input type="number" id="areaLength" min="0" step="0.1" value="14"></div>
+            <div class="form-group"><label for="areaWidth">Room Width <span class="hint">(ft)</span></label><input type="number" id="areaWidth" min="0" step="0.1" value="12"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="tileLength">Plank Length <span class="hint">(inches)</span></label><input type="number" id="tileLength" min="0" step="0.1" value="48"></div>
+            <div class="form-group"><label for="tileWidth">Plank Width <span class="hint">(inches)</span></label><input type="number" id="tileWidth" min="0" step="0.1" value="3"></div>
+          </div>
+          <div class="form-group"><label for="waste">Waste <span class="hint">(%)</span></label><input type="number" id="waste" min="0" max="50" value="10"></div>
+          <div class="form-group"><label for="pricePerTile">Price Per Plank <span class="hint">($ optional)</span></label><input type="number" id="pricePerTile" min="0" step="0.01" placeholder="e.g. 2.50"></div>
+          <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+        </div>
+        <div class="results" id="results"><h2>Results</h2><div class="result-grid">
+          <div class="result-item"><div class="label">Total Area</div><div class="value"><span id="totalArea">-</span> <span class="unit">sq ft</span></div></div>
+          <div class="result-item"><div class="label">Planks Needed</div><div class="value"><span id="tilesNeeded">-</span> <span class="unit">planks</span></div></div>
+          <div class="result-item"><div class="label">With Waste</div><div class="value"><span id="tilesWithWaste">-</span> <span class="unit">planks</span></div></div>
+          <div class="result-item"><div class="label">Plank Area</div><div class="value"><span id="tileArea">-</span> <span class="unit">sq in</span></div></div>
+          <div class="result-item"><div class="label">Boxes Needed</div><div class="value"><span id="boxesNeeded">-</span> <span class="unit">(~10/box)</span></div></div>
+          <div class="result-item" id="costItem" style="display:none"><div class="label">Estimated Cost</div><div class="value"><span id="totalCost">-</span></div></div>
+        </div></div>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label for="tileLength">Plank Length <span class="hint">(inches)</span></label><input type="number" id="tileLength" min="0" step="0.1" value="48"></div>
-        <div class="form-group"><label for="tileWidth">Plank Width <span class="hint">(inches)</span></label><input type="number" id="tileWidth" min="0" step="0.1" value="3"></div>
+      <div class="calc-two-col__right">
+        <div class="tips"><h2>Hardwood Flooring Calculator Tips</h2><ul><li>Hardwood planks are typically 2.25", 3.25", or 5" wide and 12-48" long</li><li>Add 10% waste for straight installations, 15% for diagonal</li><li>Acclimate hardwood in the room for 3-5 days before installation</li><li>Solid hardwood can be refinished multiple times; engineered typically 1-2 times</li><li>Leave a 1/2" expansion gap around the perimeter of the room</li></ul></div>
+        <div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="../index.html">General Tile</a><a href="../wall/index.html">Wall</a><a href="../backsplash/index.html">Backsplash</a><a href="../laminate/index.html">Laminate</a><a href="../vinyl/index.html">Vinyl</a></div></div>
       </div>
-      <div class="form-group"><label for="waste">Waste <span class="hint">(%)</span></label><input type="number" id="waste" min="0" max="50" value="10"></div>
-      <div class="form-group"><label for="pricePerTile">Price Per Plank <span class="hint">($ optional)</span></label><input type="number" id="pricePerTile" min="0" step="0.01" placeholder="e.g. 2.50"></div>
-      <button class="btn btn-primary" onclick="calculate()">Calculate</button>
     </div>
-    <div class="results" id="results"><h2>Results</h2><div class="result-grid">
-      <div class="result-item"><div class="label">Total Area</div><div class="value"><span id="totalArea">-</span> <span class="unit">sq ft</span></div></div>
-      <div class="result-item"><div class="label">Planks Needed</div><div class="value"><span id="tilesNeeded">-</span> <span class="unit">planks</span></div></div>
-      <div class="result-item"><div class="label">With Waste</div><div class="value"><span id="tilesWithWaste">-</span> <span class="unit">planks</span></div></div>
-      <div class="result-item"><div class="label">Plank Area</div><div class="value"><span id="tileArea">-</span> <span class="unit">sq in</span></div></div>
-      <div class="result-item"><div class="label">Boxes Needed</div><div class="value"><span id="boxesNeeded">-</span> <span class="unit">(~10/box)</span></div></div>
-      <div class="result-item" id="costItem" style="display:none"><div class="label">Estimated Cost</div><div class="value"><span id="totalCost">-</span></div></div>
-    </div></div>
-    <div class="tips"><h2>Hardwood Flooring Calculator Tips</h2><ul><li>Hardwood planks are typically 2.25", 3.25", or 5" wide and 12-48" long</li><li>Add 10% waste for straight installations, 15% for diagonal</li><li>Acclimate hardwood in the room for 3-5 days before installation</li><li>Solid hardwood can be refinished multiple times; engineered typically 1-2 times</li><li>Leave a 1/2" expansion gap around the perimeter of the room</li></ul></div>
-    <div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="../index.html">General Tile</a><a href="../wall/index.html">Wall</a><a href="../backsplash/index.html">Backsplash</a><a href="../laminate/index.html">Laminate</a><a href="../vinyl/index.html">Vinyl</a></div></div>
   </div></main>
   <div class="ad-slot ad-slot--responsive"><span>Advertisement</span></div>
   <footer class="footer"><div class="footer-inner"><div class="footer-links"><a href="../../paint-calculator/index.html">Paint Calculator</a><a href="../../material-calculator/index.html">Material Calculator</a><a href="../../electricity-calculator/index.html">Electricity Calculator</a><a href="../../tile-calculator/index.html">Tile Calculator</a><a href="../../wallpaper-calculator/index.html">Wallpaper Calculator</a></div><p class="footer-copy">&copy; 2026 CalcHub. Free calculators for home improvement projects.</p></div></footer>

@@ -42,59 +42,64 @@
       <h1>How Much Does a Refrigerator Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of running a refrigerator with compressor duty cycle</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Refrigerator Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="150">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Refrigerator Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="150">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="24">
+              </div>
+              <div class="input-group">
+                <label for="duty-cycle">Compressor duty cycle (%)</label>
+                <input type="number" id="duty-cycle" min="0" max="100" step="1" value="40">
+                <small>The compressor does not run continuously. Typical duty cycle is 30-50%.</small>
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>Effective wattage:</span><strong id="effective-wattage">—</strong></div>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="24">
-          </div>
-          <div class="input-group">
-            <label for="duty-cycle">Compressor duty cycle (%)</label>
-            <input type="number" id="duty-cycle" min="0" max="100" step="1" value="40">
-            <small>The compressor does not run continuously. Typical duty cycle is 30-50%.</small>
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>Refrigerator Efficiency Tips</h2>
+            <ul>
+              <li><strong>Set the right temperature:</strong> Keep your fridge at 37-40°F (3-4°C) and the freezer at 0°F (-18°C). Colder settings waste energy without improving food safety.</li>
+              <li><strong>Keep coils clean:</strong> Dust and pet hair on condenser coils force the compressor to work harder. Clean them every 6-12 months.</li>
+              <li><strong>Check door seals:</strong> Worn or loose gaskets let cold air escape. Test by closing the door on a piece of paper; if it slides out easily, replace the seal.</li>
+              <li><strong>Keep it full but not packed:</strong> A well-stocked fridge retains cold better than an empty one, but overpacking blocks air circulation.</li>
+              <li><strong>Let hot food cool first:</strong> Placing hot food directly in the fridge raises the internal temperature and forces the compressor to work harder.</li>
+              <li><strong>Locate away from heat sources:</strong> Keep your fridge away from the oven, dishwasher, and direct sunlight to reduce the cooling load.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>Effective wattage:</span><strong id="effective-wattage">—</strong></div>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../dishwasher/index.html">Dishwasher Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Refrigerator Efficiency Tips</h2>
-        <ul>
-          <li><strong>Set the right temperature:</strong> Keep your fridge at 37-40°F (3-4°C) and the freezer at 0°F (-18°C). Colder settings waste energy without improving food safety.</li>
-          <li><strong>Keep coils clean:</strong> Dust and pet hair on condenser coils force the compressor to work harder. Clean them every 6-12 months.</li>
-          <li><strong>Check door seals:</strong> Worn or loose gaskets let cold air escape. Test by closing the door on a piece of paper; if it slides out easily, replace the seal.</li>
-          <li><strong>Keep it full but not packed:</strong> A well-stocked fridge retains cold better than an empty one, but overpacking blocks air circulation.</li>
-          <li><strong>Let hot food cool first:</strong> Placing hot food directly in the fridge raises the internal temperature and forces the compressor to work harder.</li>
-          <li><strong>Locate away from heat sources:</strong> Keep your fridge away from the oven, dishwasher, and direct sunlight to reduce the cooling load.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../dishwasher/index.html">Dishwasher Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>

@@ -42,53 +42,58 @@
       <h1>How Much Does a Hot Tub Cost to Run?</h1>
       <p class="calc-subtitle">Calculate the electricity cost of running a hot tub</p>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <h2>Hot Tub Details</h2>
-          <div class="input-group">
-            <label for="wattage">Wattage (watts)</label>
-            <input type="number" id="wattage" min="0" step="1" value="3000">
+      <div class="calc-two-col">
+        <div class="calc-two-col__left">
+          <div class="calc-grid">
+            <div class="calc-card">
+              <h2>Hot Tub Details</h2>
+              <div class="input-group">
+                <label for="wattage">Wattage (watts)</label>
+                <input type="number" id="wattage" min="0" step="1" value="3000">
+              </div>
+              <div class="input-group">
+                <label for="hours">Hours per day</label>
+                <input type="number" id="hours" min="0" max="24" step="0.5" value="4">
+              </div>
+              <div class="input-group">
+                <label for="rate">Electricity rate ($/kWh)</label>
+                <input type="number" id="rate" min="0" step="0.01" value="0.16">
+              </div>
+              <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="calc-card results-card" id="results" style="display:none;">
+              <h2>Estimated Costs</h2>
+              <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
+              <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
+              <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
+              <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
+              <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
+              <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="hours">Hours per day</label>
-            <input type="number" id="hours" min="0" max="24" step="0.5" value="4">
-          </div>
-          <div class="input-group">
-            <label for="rate">Electricity rate ($/kWh)</label>
-            <input type="number" id="rate" min="0" step="0.01" value="0.16">
-          </div>
-          <button class="btn" onclick="calculate()">Calculate</button>
         </div>
+        <div class="calc-two-col__right">
+          <div class="info-section">
+            <h2>Hot Tub Efficiency Tips</h2>
+            <ul>
+              <li><strong>Always use a cover:</strong> A well-fitting, insulated cover prevents heat loss and can reduce energy costs by up to 50%.</li>
+              <li><strong>Lower the temperature when not in use:</strong> Dropping the temperature by just a few degrees when you are away saves significant energy over time.</li>
+              <li><strong>Invest in good insulation:</strong> Full-foam insulated hot tubs retain heat much better than partially insulated models.</li>
+              <li><strong>Use a timer:</strong> Program the heater and jets to run only when needed rather than continuously.</li>
+              <li><strong>Keep the water chemistry balanced:</strong> Properly maintained water reduces strain on the pump and heater, improving efficiency.</li>
+              <li><strong>Shelter from wind:</strong> Wind increases heat loss. Position your hot tub in a sheltered area or add a windbreak.</li>
+            </ul>
+          </div>
 
-        <div class="calc-card results-card" id="results" style="display:none;">
-          <h2>Estimated Costs</h2>
-          <div class="result-row"><span>kWh per day:</span><strong id="kwh-day">—</strong></div>
-          <div class="result-row"><span>kWh per month:</span><strong id="kwh-month">—</strong></div>
-          <div class="result-row"><span>kWh per year:</span><strong id="kwh-year">—</strong></div>
-          <div class="result-row"><span>Cost per day:</span><strong id="cost-day">—</strong></div>
-          <div class="result-row"><span>Cost per month:</span><strong id="cost-month">—</strong></div>
-          <div class="result-row"><span>Cost per year:</span><strong id="cost-year">—</strong></div>
+          <div class="info-section">
+            <h2>Related Calculators</h2>
+            <ul>
+              <li><a href="../index.html">General Electricity Cost Calculator</a></li>
+              <li><a href="../pool-pump/index.html">Pool Pump Electricity Cost Calculator</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Hot Tub Efficiency Tips</h2>
-        <ul>
-          <li><strong>Always use a cover:</strong> A well-fitting, insulated cover prevents heat loss and can reduce energy costs by up to 50%.</li>
-          <li><strong>Lower the temperature when not in use:</strong> Dropping the temperature by just a few degrees when you are away saves significant energy over time.</li>
-          <li><strong>Invest in good insulation:</strong> Full-foam insulated hot tubs retain heat much better than partially insulated models.</li>
-          <li><strong>Use a timer:</strong> Program the heater and jets to run only when needed rather than continuously.</li>
-          <li><strong>Keep the water chemistry balanced:</strong> Properly maintained water reduces strain on the pump and heater, improving efficiency.</li>
-          <li><strong>Shelter from wind:</strong> Wind increases heat loss. Position your hot tub in a sheltered area or add a windbreak.</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <h2>Related Calculators</h2>
-        <ul>
-          <li><a href="../index.html">General Electricity Cost Calculator</a></li>
-          <li><a href="../pool-pump/index.html">Pool Pump Electricity Cost Calculator</a></li>
-        </ul>
       </div>
     </div>
   </main>
