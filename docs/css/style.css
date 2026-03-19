@@ -3,20 +3,20 @@
    ========================================================================== */
 
 :root {
-  /* Warm neutral palette */
-  --bg: #f7f6f3;
+  /* Clean palette with blue accent */
+  --bg: #f8fafc;
   --bg-card: #ffffff;
-  --text: #1a1a1a;
-  --text-secondary: #6b6b6b;
-  --text-tertiary: #9a9a9a;
-  --border: #e5e4e0;
-  --border-light: #eeeee9;
-  --accent: #1a1a1a;
-  --accent-hover: #333333;
-  --accent-light: #f2f1ee;
-  --success: #346538;
-  --success-bg: #edf3ec;
-  --success-border: #d4ddd3;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #eff6ff;
+  --success: #16a34a;
+  --success-bg: #f0fdf4;
+  --success-border: #bbf7d0;
   --radius: 8px;
   --radius-lg: 12px;
   --max-width: 1060px;
@@ -74,16 +74,15 @@ a { color: inherit; }
 }
 
 .logo {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
   letter-spacing: -0.03em;
 }
 
 .logo span {
-  color: var(--text-secondary);
-  font-weight: 400;
+  color: var(--text);
 }
 
 .nav {
@@ -104,12 +103,12 @@ a { color: inherit; }
 }
 
 .nav a:hover {
-  color: var(--text);
+  color: var(--accent);
   background: var(--accent-light);
 }
 
 .nav a.active {
-  color: var(--text);
+  color: var(--accent);
   background: var(--accent-light);
   font-weight: 600;
 }
@@ -131,13 +130,14 @@ a { color: inherit; }
    ========================================================================== */
 
 .hero {
-  padding: 48px 0 40px;
+  text-align: center;
+  padding: 48px 16px 32px;
 }
 
 .hero h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 12px;
   color: var(--text);
@@ -147,7 +147,8 @@ a { color: inherit; }
   color: var(--text-secondary);
   font-size: 1.0625rem;
   line-height: 1.6;
-  max-width: 520px;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -157,43 +158,36 @@ a { color: inherit; }
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 24px;
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: border-color var(--transition), transform var(--transition);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
 
 .card:hover {
-  border-color: #ccc;
-  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
 .card-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  border-radius: var(--radius);
-  background: var(--accent-light);
-  color: var(--text);
-  font-size: 1.125rem;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .card-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--text);
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
   fill: none;
   stroke-width: 1.75;
   stroke-linecap: round;
@@ -221,20 +215,16 @@ a { color: inherit; }
 }
 
 .card .card-links a {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 0.75rem;
+  color: var(--accent);
   text-decoration: none;
-  padding: 3px 10px;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  padding: 2px 8px;
+  background: var(--accent-light);
   border-radius: 999px;
-  transition: color var(--transition), border-color var(--transition);
 }
 
 .card .card-links a:hover {
-  color: var(--text);
-  border-color: #bbb;
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -409,7 +399,8 @@ input[type="number"]:focus,
 input[type="text"]:focus,
 select:focus {
   outline: none;
-  border-color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 input::placeholder {
@@ -582,15 +573,12 @@ input[type="number"] {
 }
 
 .info-section a {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-color: var(--border);
-  text-underline-offset: 2px;
-  transition: text-decoration-color var(--transition);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .info-section a:hover {
-  text-decoration-color: var(--text);
+  text-decoration: underline;
 }
 
 /* Tips card (paint calculator pattern) */
@@ -612,15 +600,12 @@ input[type="number"] {
 }
 
 .calc-card a {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-color: var(--border);
-  text-underline-offset: 2px;
-  transition: text-decoration-color var(--transition);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .calc-card a:hover {
-  text-decoration-color: var(--text);
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -647,20 +632,18 @@ input[type="number"] {
 }
 
 .related-links a {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  color: var(--accent);
   text-decoration: none;
-  padding: 5px 14px;
+  padding: 6px 14px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 999px;
-  transition: border-color var(--transition), color var(--transition);
+  transition: background var(--transition);
 }
 
 .related-links a:hover {
-  border-color: #bbb;
-  color: var(--text);
+  background: var(--accent-light);
 }
 
 /* ==========================================================================
@@ -722,7 +705,7 @@ input[type="number"] {
 }
 
 .footer-links a:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .footer-copy {
@@ -735,10 +718,6 @@ input[type="number"] {
    ========================================================================== */
 
 @media (min-width: 640px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .result-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -754,8 +733,12 @@ input[type="number"] {
 }
 
 @media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .hero h1 {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
   }
 
   .calc-page h1 {
@@ -768,12 +751,16 @@ input[type="number"] {
 }
 
 @media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .header-inner {
-    height: 56px;
+    height: 60px;
   }
 
   .nav a {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     padding: 6px 14px;
   }
 }
