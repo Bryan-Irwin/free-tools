@@ -21,7 +21,10 @@ var CalcHub = {
 
   showResults: function(el) {
     if (typeof el === 'string') el = document.getElementById(el);
-    if (el) el.classList.add('visible');
+    if (el) {
+      el.style.display = '';
+      el.classList.add('visible');
+    }
   },
 
   setResult: function(id, value) {
